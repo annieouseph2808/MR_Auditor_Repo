@@ -27,4 +27,4 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
           PR_NUMBER: ${{ github.event.pull_request.number }}
-        run: python auditor.py
+        run: python scripts/auditor.py
