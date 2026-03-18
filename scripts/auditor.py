@@ -4,7 +4,7 @@ from groq import Groq
 
 GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")
 GROQ_API_KEY = os.getenv("GROQ_API_KEY")
-REPO_NAME = os.getenv("REPO_NAME" )
+REPO_NAME = os.getenv("GITHUB_REPOSITORY" )
 PR_NUMBER = int(os.getenv("PR_NUMBER"))
 
 def run_ai_audit():
