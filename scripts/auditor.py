@@ -2,13 +2,16 @@ import os
 from github import Github, Auth
 from groq import Groq
 
-GITHUB_TOKEN = "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"
-GROQ_API_KEY = "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"
-REPO_NAME = "annieouseph2808/MR_Auditor_Repo"  
+GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")
+GROQ_API_KEY = os.getenv("GROQ_API_KEY")
+REPO_NAME = os.getenv("REPO_NAME" )
 PR_NUMBER = int(os.getenv("PR_NUMBER"))
 
 def run_ai_audit():
-
+    token = os.getenv("GITHUB_TOKEN")
+    if not token:
+        print("Error: GITHUB_TOKEN not found in environment!")
+        return
     auth = Auth.Token(GITHUB_TOKEN)
     g = Github(auth=auth)
     client = Groq(api_key=GROQ_API_KEY)
