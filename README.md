@@ -42,7 +42,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Run AI Auditor
-        uses: annieouseph2808/MR_Auditor_Repo@v1.0.0
+        uses: annieouseph2808/MR_Auditor_Repo@v1.0.3
         with:
           groq_api_key: ${{ secrets.GROQ_API_KEY }}
 ```
@@ -53,7 +53,7 @@ jobs:
 
 ### **Required Secrets**
 
-* **GROQ_API_KEY:** Obtain a free API key from the Groq Console. Add it to your repository under
+* **GROQ_API_KEY:** Obtain a free API key from the Groq Console https://console.groq.com/keys . Add it to your repository under
   `Settings > Secrets and variables > Actions`.
 
 ### **Permissions**
