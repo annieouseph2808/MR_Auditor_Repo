@@ -2,6 +2,10 @@ name: 'AI PR Auditor'
 description: 'Automatically reviews Pull Requests for security and logic bugs using Groq AI.'
 author: 'Annie Ouseph'
 
+branding:
+  icon: 'cpu'
+  color: 'blue'
+  
 inputs:
   groq_api_key:
     description: 'Your Groq API Key'
