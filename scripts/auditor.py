@@ -20,7 +20,7 @@ def run_ai_audit():
     pr = repo.get_pull(PR_NUMBER)
     
     diff_text = ""
-    for file in pr.get_files(): #gets only the files modified
+    for file in pr.get_files():
         diff_text += f"--- File: {file.filename} ---\n{file.patch}\n\n"
 
     system_prompt = (
@@ -39,7 +39,7 @@ def run_ai_audit():
     
     review_feedback = response.choices[0].message.content
 
-    pr.create_issue_comment(f"### 🤖 AI Code Review\n\n{review_feedback}")
+    pr.create_issue_comment(f"### AI Code Review\n\n{review_feedback}")
     print("Audit complete! Check your Pull Request for the comment.")
 
 if __name__ == "__main__":

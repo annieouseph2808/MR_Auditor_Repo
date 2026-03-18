@@ -1,0 +1,21 @@
+name: 'AI PR Auditor'
+description: 'Automatically reviews Pull Requests for security and logic bugs using Groq AI.'
+author: 'Annie Ouseph'
+
+inputs:
+  groq_api_key:
+    description: 'Your Groq API Key'
+    required: true
+  github_token:
+    description: 'The GITHUB_TOKEN for the repo'
+    required: true
+    default: ${{ github.token }}
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  env:
+    GROQ_API_KEY: ${{ inputs.groq_api_key }}
+    GITHUB_TOKEN: ${{ inputs.github_token }}
+    GITHUB_REPOSITORY: ${{ github.repository }}
+    PR_NUMBER: ${{ github.event.pull_request.number }}
