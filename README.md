@@ -42,7 +42,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Run AI Auditor
-        uses: annieouseph2808/MR_Auditor_Repo@v1.0.3
+        uses: annieouseph2808/MR_Auditor_Repo@v1.0.4
         with:
           groq_api_key: ${{ secrets.GROQ_API_KEY }}
 ```
